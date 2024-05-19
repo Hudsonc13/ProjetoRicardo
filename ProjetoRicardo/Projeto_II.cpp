@@ -92,7 +92,7 @@ void preencher_atv(desc*& lista) {
 		cin >> titulo;
 		cout << "Insira o tipo:\n";
 		cin >> tipo;
-		cout << "Insira a data (XX/XX/XX-XX:XX):\n";
+		cout << "Insira a data (XX/XX/XX-XX:XX):\n"; //Adicionar date format???
 		cin >> data;
 		if (titulo != "x")
 			adicionar(lista, titulo, tipo, data);
@@ -101,7 +101,14 @@ void preencher_atv(desc*& lista) {
 
 }
 
-
+//Criação de uma matriz dinamica para fazer a contagem da presença dos usuarios nas atividades
+bool** criar_mat(int usuario, int atv) {
+	bool **lin = new bool*[usuario];
+	for (int i = 0; i < usuario; i++) {
+		for (int j = 0; j < atv; j++)
+			lin[i][j] = new bool[atv];
+	}
+}
 
 
 
